@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
 
 <head>
@@ -10,7 +10,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -32,7 +32,9 @@
 
     .hero-section {
       height: 100vh;
-      background: linear-gradient(rgba(52, 52, 52, 0.751), rgba(51, 51, 51, 0.548)), url("intro_img.jpg") no-repeat center center;
+      background:
+        linear-gradient(rgba(52, 52, 52, 0.751), rgba(51, 51, 51, 0.548)),
+        url("intro_img.jpg") no-repeat center center;
       background-size: cover;
       display: flex;
       justify-content: center;
@@ -447,7 +449,6 @@
 </head>
 
 <body>
-
   <a href="https://t.me/chilonzor1texnikumi" target="_blank" class="tg-btn">
     <span class="ring"></span>
     <span class="ring ring2"></span>
@@ -504,7 +505,7 @@
       }
     }
 
-    @media (max-width:480px) {
+    @media (max-width: 480px) {
       .tg-btn {
         width: 48px;
         height: 48px;
@@ -529,19 +530,32 @@
     <div class="container">
       <a class="navbar-brand" href="index.html">
         <img src="logotip.png" alt="logo" class="logo" />
-        <span class="navbar-brand-text" data-lang="title-text">Chilonzor tumani <br> 1-son Texnikumi</span>
+        <span class="navbar-brand-text" data-lang="title-text">Chilonzor tumani <br />
+          1-son Texnikumi</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <div class="hamburger-icon"><span></span><span></span><span></span></div>
+        <div class="hamburger-icon">
+          <span></span><span></span><span></span>
+        </div>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#boshsahifa" data-lang="home">Bosh sahifa</a></li>
-          <li class="nav-item"><a class="nav-link" href="#kasblar" data-lang="departments">Kasblar</a></li>
-          <li class="nav-item"><a class="nav-link" href="#bizhaqimizda" data-lang="about">Biz haqimizda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#rahbariyat" data-lang="management">Rahbariyat</a></li>
-          <li class="nav-item"><a class="nav-link" href="#aloqa" data-lang="contact">Aloqa</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#boshsahifa" data-lang="home">Bosh sahifa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#kasblar" data-lang="departments">Kasblar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bizhaqimizda" data-lang="about">Biz haqimizda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#rahbariyat" data-lang="management">Rahbariyat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aloqa" data-lang="contact">Aloqa</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="https://maps.app.goo.gl/m2LWkvW9geqS2PzR7" target="_blank">
               <span data-lang="location">Joylashuv</span>
@@ -563,10 +577,12 @@
   <!-- Intro page -->
   <section id="boshsahifa" class="hero-section">
     <div class="hero-content">
-      <h1 class="hero-title" data-lang="hero-title">Chilonzor tuman 1-son Texnikumi</h1>
+      <h1 class="hero-title" data-lang="hero-title">
+        Chilonzor tuman 1-son Texnikumi
+      </h1>
       <p class="hero-subtitle" data-lang="hero-subtitle">
-        Bu yerda siz Texnikumning zamonaviy o'quv xonalari, malakali ustozlari va ta'lim jarayoni haqida barcha
-        ma'lumotlarni topasiz.
+        Bu yerda siz Texnikumning zamonaviy o'quv xonalari, malakali ustozlari
+        va ta'lim jarayoni haqida barcha ma'lumotlarni topasiz.
       </p>
     </div>
   </section>
@@ -574,7 +590,9 @@
   <!-- Biz haqimizda -->
   <section id="bizhaqimizda" class="py-5">
     <div class="container">
-      <h2 class="text-center section-title" data-lang="about-title">Biz haqimizda</h2>
+      <h2 class="text-center section-title" data-lang="about-title">
+        Biz haqimizda
+      </h2>
 
       <section class="texnikum-about">
         <style>
@@ -639,16 +657,65 @@
             justify-content: center;
           }
 
-          .texnikum-about .image img {
+          /* ===== SLIDER ===== */
+          .custom-slider {
+            position: relative;
             width: 100%;
             max-width: 600px;
             height: 520px;
-            object-fit: cover;
-            border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            perspective: 1200px;
+            overflow: hidden;
           }
 
-          @media (max-width:900px) {
+          .slides img {
+            position: absolute;
+            width: 80%;
+            height: 85%;
+            top: 7.5%;
+            left: 10%;
+            object-fit: cover;
+            border-radius: 14px;
+            transition: all 0.8s ease;
+            opacity: 0;
+          }
+
+          /* MARKAZ */
+          .slides img.active {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 3;
+          }
+
+          /* CHAP */
+          .slides img.prev {
+            transform: translateX(-55%) scale(0.9);
+            opacity: 0.7;
+            z-index: 2;
+          }
+
+          /* O‘NG */
+          .slides img.next {
+            transform: translateX(55%) scale(0.9);
+            opacity: 0.7;
+            z-index: 2;
+          }
+
+          /* PROGRESS */
+          .progress {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+          }
+
+          .bar {
+            height: 100%;
+            width: 0%;
+            background: #1f5eff;
+          }
+
+          @media (max-width: 900px) {
             .texnikum-about .wrapper {
               flex-direction: column;
               text-align: center;
@@ -658,12 +725,12 @@
               order: -1;
             }
 
-            .texnikum-about .image img {
+            .custom-slider {
               height: 420px;
             }
           }
 
-          @media (max-width:500px) {
+          @media (max-width: 500px) {
             .texnikum-about .text h2 {
               font-size: 28px;
             }
@@ -675,19 +742,27 @@
             .texnikum-about .stats {
               gap: 18px;
             }
+
+            .custom-slider {
+              height: 300px;
+            }
           }
         </style>
+
         <div class="container">
           <div class="wrapper">
             <div class="text">
               <h2 data-lang="about-heading">Texnikumimiz haqida</h2>
               <p data-lang="about-desc">
-                Chilonzor tuman 1-son texnikumi yillar davomida yoshlarga professional ta'lim berib kelmoqda.
-                Bizning missiyamiz – har bir talabaga haqiqiy kasb-hunar ko'nikmalarini o'rgatish va ularni
-                ish hayotiga tayyorlashdir. Biz amaliy ta'limga alohida e'tibor beramiz. Har bir yo'nalishda
-                talabalar nafaqat nazariy bilim olishadi, balki haqiqiy ish sharoitlarida qo'llash mumkin
-                bo'lgan amaliy ko'nikmalarni ham egallashadi.
+                Chilonzor tuman 1-son texnikumi yillar davomida yoshlarga
+                professional ta'lim berib kelmoqda. Bizning missiyamiz – har
+                bir talabaga haqiqiy kasb-hunar ko'nikmalarini o'rgatish va
+                ularni ish hayotiga tayyorlashdir. Biz amaliy ta'limga alohida
+                e'tibor beramiz. Har bir yo'nalishda talabalar nafaqat nazariy
+                bilim olishadi, balki haqiqiy ish sharoitlarida qo'llash
+                mumkin bo'lgan amaliy ko'nikmalarni ham egallashadi.
               </p>
+
               <div class="stats">
                 <div class="stat">
                   <h3>1000+</h3>
@@ -707,13 +782,292 @@
                 </div>
               </div>
             </div>
+
+            <!-- 🔥 SLIDER -->
             <div class="image">
-              <img src="director.jpg" alt="Texnikum rasmi">
+              <div class="custom-slider">
+                <div class="slides">
+                  <img src="old tex.jpg" class="active" />
+                  <img src="old korinish.jpg" />
+                  <img src="intro_img.jpg" />
+                  <img src="old zal.jpg" />
+                  <img src="new zal.jpg" />
+                  <img src="old oshxona.jpg" />
+                  <img src="old info.jpg" />
+                </div>
+
+                <div class="progress">
+                  <div class="bar"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- FEATURE CARDS (o‘zgarmagan) -->
+      <div class="row">
+        <!-- shu qism sizda qanday bo‘lsa o‘sha qoladi -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let slides = document.querySelectorAll(".slides img");
+    let index = 0;
+    let duration = 3000;
+    let interval;
+
+    function updateSlides() {
+      slides.forEach((s, i) => {
+        s.classList.remove("active", "prev", "next");
+
+        if (i === index) s.classList.add("active");
+        else if (i === (index - 1 + slides.length) % slides.length)
+          s.classList.add("prev");
+        else if (i === (index + 1) % slides.length) s.classList.add("next");
+      });
+
+      startProgress();
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      updateSlides();
+    }
+
+    function startSlider() {
+      interval = setInterval(nextSlide, duration);
+    }
+
+    function startProgress() {
+      let bar = document.querySelector(".bar");
+      bar.style.transition = "none";
+      bar.style.width = "0%";
+
+      setTimeout(() => {
+        bar.style.transition = duration + "ms linear";
+        bar.style.width = "100%";
+      }, 50);
+    }
+
+    let slider = document.querySelector(".custom-slider");
+
+    slider.addEventListener("mouseenter", () => {
+      clearInterval(interval);
+    });
+
+    slider.addEventListener("mouseleave", () => {
+      startSlider();
+      startProgress();
+    });
+
+    updateSlides();
+    startSlider();
+    startProgress();
+  </script>
+
+  <section class="timeline-section">
+    <style>
+      .timeline-section {
+        padding: 80px 20px;
+        background: #f8f9fb;
+        font-family: Arial, sans-serif;
+      }
+
+      .timeline-title {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 60px;
+        font-weight: 600;
+      }
+
+      .timeline-wrapper {
+        max-width: 1100px;
+        margin: auto;
+        position: relative;
+        padding-left: 70px;
+      }
+
+      .timeline-wrapper::before {
+        content: "";
+        position: absolute;
+        left: 25px;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: #1f5eff;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 70px;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        background: #1f5eff;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 2;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .timeline-card {
+        margin-left: 80px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+      }
+
+      .timeline-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .timeline-text {
+        flex: 1;
+        font-size: 15px;
+        color: #555;
+        line-height: 1.7;
+      }
+
+      .timeline-text strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #1f5eff;
+      }
+
+      .timeline-img {
+        width: 200px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .timeline-wrapper {
+          padding-left: 60px;
+        }
+
+        .timeline-card {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 70px;
+        }
+
+        .timeline-img {
+          width: 100%;
+          height: 180px;
+        }
+
+        .timeline-dot {
+          width: 40px;
+          height: 40px;
+          font-size: 11px;
+        }
+      }
+    </style>
+
+    <h2 class="timeline-title">Texnikum tarixi</h2>
+
+    <div class="timeline-wrapper">
+      <!-- 🔥 1983 QO‘SHILDI -->
+      <div class="timeline-item">
+        <div class="timeline-dot">1983</div>
+        <div class="timeline-card">
+          <div class="timeline-text">
+            <strong>Tashkil etilgan</strong>
+            1983 yil Toshkent radiotexnika texnikumi sifatida tashkil etilgan.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">1997</div>
+        <div class="timeline-card">
+          <div class="timeline-text">
+            <strong>Texnikum → kollej</strong>
+            O‘zbekiston Respublikasi Oliy ta’lim vaziri A.Salimovning 1997 yil
+            7-yanvardagi №5-sonli qaroriga muvofiq Toshkent radiotexnika
+            texnikumi Toshkent radiotexnika, elektronika va avtomatika
+            kollejiga o‘zgartirilgan.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">2000</div>
+        <div class="timeline-card">
+          <div class="timeline-text">
+            <strong>Kollej → kasb-hunar kolleji</strong>
+            O‘zbekiston Respublikasi Oliy ta’lim vaziri J.X.Xusanovning 2000
+            yil 30-oktyabrdagi №219-sonli qaroriga muvofiq Toshkent
+            radiotexnika, elektronika va avtomatika kolleji Toshkent
+            radiotexnika va avtomatika kasb-hunar kollejiga o‘zgartirilgan.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">2019</div>
+        <div class="timeline-card">
+          <div class="timeline-text">
+            <strong>Kasb-hunar maktabi</strong>
+            O’zbekiston Respublikasi Prezidentining 2019 yil 6 sentyabrdagi
+            “Professional ta’lim tizimini yanada takomillashtirishga doir
+            qo’shimcha chora-tadbirlari to’g’risida”gi PF-5812-son farmoni
+            asosida Toshkent radiotexnika va avtomatika kasb-hunar kolleji
+            Chilonzor tuman 1-son kasb-hunar maktabiga o’zgartirildi.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">2024</div>
+        <div class="timeline-card">
+          <div class="timeline-text">
+            <strong>Politexnikum</strong>
+            O’zbekiston Respublikasi Prezidentining 2024 yil 16 oktyabrdagi
+            PF-158-son farmoni asosida Chilonzor tuman 1-son kasb-hunar
+            maktabi Chilonzor tuman 1-son politexnikumiga o’zgartirildi.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">2025</div>
+        <div class="timeline-card">
+          <div class="timeline-text">
+            <strong>Texnikum</strong>
+            O’zbekiston Respublikasi Prezidentining 2025 yil 23 oktyabrdagi
+            PF-190-son farmoniga muvofiq Chilonzor tuman 1-son politexnikumi
+            Chilonzor tuman 1-son texnikumiga o’zgartirildi.
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
       <div class="row">
         <!-- Feature Card 1 -->
         <div class="col-md-4 col-sm-6">
@@ -770,6 +1124,8 @@
             </div>
           </div>
         </div>
+
+
       </div>
     </div>
   </section>
@@ -777,40 +1133,54 @@
   <!-- Hamkor kompaniyalar -->
   <section id="hamkorlar" class="py-5">
     <div class="container">
-      <h2 class="text-center section-title mb-5" data-lang="partners">Hamkor kompaniyalar</h2>
+      <h2 class="text-center section-title mb-5" data-lang="partners">
+        Hamkor kompaniyalar
+      </h2>
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
-        <a class="col mb-3" href="https://www.pearson.com/en-us.html" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="pearson.png" class="card-img-top" alt="Pearson">Pearson</div>
-        </a>
-        <a class="col mb-3" href="https://artelelectronics.com/" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="artel.png" class="card-img-top" alt="Artel">artel</div>
-        </a>
-        <a class="col mb-3" href="https://innotechnopark.com/uz/" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="technopark.png" class="card-img-top"
-              alt="InnoTechnoPark">InnoTechnoPark
+        <a class="col mb-3" href="https://www.pearson.com/en-us.html" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="pearson.png" class="card-img-top" alt="Pearson" />Pearson
           </div>
         </a>
-        <a class="col mb-3" href="https://texnopark.uz/" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="texnopark.png" class="card-img-top" alt="Texnopark">Texnopark
+        <a class="col mb-3" href="https://artelelectronics.com/" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="artel.png" class="card-img-top" alt="Artel" />artel
           </div>
         </a>
-        <a class="col mb-3" href="https://www.instagram.com/nurtex_uz" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="nurtex.png" class="card-img-top" alt="Nurtex">Nurtex</div>
-        </a>
-        <a class="col mb-3" href="https://tashbus.uz/" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="toshkent.png" class="card-img-top" alt="Tashbus">Tashbus</div>
-        </a>
-        <a class="col mb-3" href="https://uzeltech.uz/" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="uzeltexsanoat.png" class="card-img-top"
-              alt="Uzeltexsanoat">Uzeltexsanoat
+        <a class="col mb-3" href="https://innotechnopark.com/uz/" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="technopark.png" class="card-img-top" alt="InnoTechnoPark" />InnoTechnoPark
           </div>
         </a>
-        <a class="col mb-3" href="https://uzkabel.uz/" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="uzkabel.png" class="card-img-top" alt="Uzkabel">Uzkabel</div>
+        <a class="col mb-3" href="https://texnopark.uz/" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="texnopark.png" class="card-img-top" alt="Texnopark" />Texnopark
+          </div>
         </a>
-        <a class="col mb-3" href="https://blackstone.uz/" target="_blank" style="text-decoration: none;">
-          <div class="card h-100"><img src="blackstone.png" class="card-img-top" alt="Blackstone">Blackstone
+        <a class="col mb-3" href="https://www.instagram.com/nurtex_uz" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="nurtex.png" class="card-img-top" alt="Nurtex" />Nurtex
+          </div>
+        </a>
+        <a class="col mb-3" href="https://tashbus.uz/" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="toshkent.png" class="card-img-top" alt="Tashbus" />Tashbus
+          </div>
+        </a>
+        <a class="col mb-3" href="https://uzeltech.uz/" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="uzeltexsanoat.png" class="card-img-top" alt="Uzeltexsanoat" />Uzeltexsanoat
+          </div>
+        </a>
+        <a class="col mb-3" href="https://uzkabel.uz/" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="uzkabel.png" class="card-img-top" alt="Uzkabel" />Uzkabel
+          </div>
+        </a>
+        <a class="col mb-3" href="https://blackstone.uz/" target="_blank" style="text-decoration: none">
+          <div class="card h-100">
+            <img src="blackstone.png" class="card-img-top" alt="Blackstone" />Blackstone
           </div>
         </a>
       </div>
@@ -824,7 +1194,9 @@
           border-radius: 10px;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
           background-color: #fff;
-          transition: transform 0.3s, box-shadow 0.3s;
+          transition:
+            transform 0.3s,
+            box-shadow 0.3s;
           height: 140px;
           width: 100%;
         }
@@ -900,41 +1272,48 @@
   <!-- Kasblar -->
   <section id="kasblar">
     <div>
-      <h2 class="text-center section-title" data-lang="departments">Kasblar</h2>
+      <h2 class="text-center section-title" data-lang="departments">
+        Kasblar
+      </h2>
       <div class="department-container">
         <a class="linkdepartment" href="xalqarotalim.html">
           <div class="department-card" style="padding: 0px 35px">
             <i class="fas fa-globe department-icon"></i>
-            <h5 class="department-title" style="font-size: 17px;" data-lang="dep1">Xalqaro ta'lim dasturi asosida
-              (9-sinf negizida)</h5>
+            <h5 class="department-title" style="font-size: 17px" data-lang="dep1">
+              Xalqaro ta'lim dasturi asosida (9-sinf negizida)
+            </h5>
           </div>
         </a>
         <a class="linkdepartment" href="milliytalim.html">
           <div class="department-card">
             <i class="fas fa-school department-icon"></i>
-            <h5 class="department-title" style="font-size: 17.2px;" data-lang="dep2">Milliy ta'lim dasturi asosida
-              (9-sinf bitiruvchilari uchun)</h5>
+            <h5 class="department-title" style="font-size: 17.2px" data-lang="dep2">
+              Milliy ta'lim dasturi asosida (9-sinf bitiruvchilari uchun)
+            </h5>
           </div>
         </a>
         <a class="linkdepartment" href="dualtalim.html">
           <div class="department-card">
             <i class="fas fa-handshake department-icon"></i>
-            <h5 class="department-title" style="font-size: 18px;" data-lang="dep3">Dual ta'lim dasturi asosida (9-sinf
-              negizida)</h5>
+            <h5 class="department-title" style="font-size: 18px" data-lang="dep3">
+              Dual ta'lim dasturi asosida (9-sinf negizida)
+            </h5>
           </div>
         </a>
         <a class="linkdepartment" href="onbirsinf.html">
           <div class="department-card">
             <i class="fas fa-user-graduate department-icon"></i>
-            <h5 class="department-title" style="font-size: 17.5px;" data-lang="dep4">Dual ta'lim dasturi asosida
-              (11-sinf negizida)</h5>
+            <h5 class="department-title" style="font-size: 17.5px" data-lang="dep4">
+              Dual ta'lim dasturi asosida (11-sinf negizida)
+            </h5>
           </div>
         </a>
         <a class="linkdepartment" href="shartnoma.html">
           <div class="department-card">
             <i class="fas fa-file-invoice-dollar department-icon"></i>
-            <h5 class="department-title" style="font-size: 17.5px;" data-lang="dep5">11-sinf bitiruvchilari uchun
-              (To'lov shartnomasi asosida)</h5>
+            <h5 class="department-title" style="font-size: 17.5px" data-lang="dep5">
+              11-sinf bitiruvchilari uchun (To'lov shartnomasi asosida)
+            </h5>
           </div>
         </a>
       </div>
@@ -964,7 +1343,9 @@
             <ul>
               <li><a href="#boshsahifa" data-lang="home">Bosh sahifa</a></li>
               <li><a href="#kasblar" data-lang="departments">Kasblar</a></li>
-              <li><a href="#bizhaqimizda" data-lang="about">Biz haqimizda</a></li>
+              <li>
+                <a href="#bizhaqimizda" data-lang="about">Biz haqimizda</a>
+              </li>
               <li><a href="#aloqa" data-lang="contact">Aloqa</a></li>
             </ul>
           </div>
@@ -973,7 +1354,9 @@
           <div class="footer-links">
             <h5 data-lang="administration">Ma'muriyat</h5>
             <ul>
-              <li><a href="rahbariyat.html" data-lang="management">Rahbariyat</a></li>
+              <li>
+                <a href="rahbariyat.html" data-lang="management">Rahbariyat</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -983,8 +1366,8 @@
             <ul>
               <li>
                 <i class="fas fa-map-marker-alt me-2"></i>
-                <span data-lang="address">Manzil: Toshkent shahar, Chilonzor tumani, 20-D mavze, Katta Qa'ni ko'chasi 52
-                  uy</span>
+                <span data-lang="address">Manzil: Toshkent shahar, Chilonzor tumani, 20-D mavze,
+                  Katta Qa'ni ko'chasi 52 uy</span>
               </li>
               <li>
                 <i class="fas fa-phone me-2"></i>
@@ -997,8 +1380,9 @@
       <div class="copyright">
         <p>
           &copy; 2026
-          <span data-lang="title-text">Chilonzor tuman 1-son Texnikumi. </span>
-          <span data-lang="rights" style="text-decoration: none;">Barcha huquqlar himoyalangan!</span>
+          <span data-lang="title-text">Chilonzor tuman 1-son Texnikumi.
+          </span>
+          <span data-lang="rights" style="text-decoration: none">Barcha huquqlar himoyalangan!</span>
         </p>
       </div>
     </div>
@@ -1009,143 +1393,164 @@
   <script>
     const translations = {
       uz: {
-        "title": "1-son Texnikumi",
+        title: "1-son Texnikumi",
         "title-text": "Chilonzor tumani\n1-son Texnikumi",
-        "home": "Bosh sahifa",
-        "departments": "Kasblar",
-        "about": "Biz haqimizda",
+        home: "Bosh sahifa",
+        departments: "Kasblar",
+        about: "Biz haqimizda",
         "about-title": "Biz haqimizda",
-        "management": "Rahbariyat",
-        "contact": "Aloqa",
-        "location": "Joylashuv",
+        management: "Rahbariyat",
+        contact: "Aloqa",
+        location: "Joylashuv",
 
         "hero-title": "Chilonzor tuman 1-son Texnikumi",
-        "hero-subtitle": "Bu yerda siz Texnikumning zamonaviy o'quv xonalari, malakali ustozlari va ta'lim jarayoni haqida barcha ma'lumotlarni topasiz.",
+        "hero-subtitle":
+          "Bu yerda siz Texnikumning zamonaviy o'quv xonalari, malakali ustozlari va ta'lim jarayoni haqida barcha ma'lumotlarni topasiz.",
 
         "about-heading": "Texnikumimiz haqida",
-        "about-desc": "Chilonzor tuman 1-son texnikumi yillar davomida yoshlarga professional ta'lim berib kelmoqda. Bizning missiyamiz – har bir talabaga haqiqiy kasb-hunar ko'nikmalarini o'rgatish va ularni ish hayotiga tayyorlashdir. Biz amaliy ta'limga alohida e'tibor beramiz. Har bir yo'nalishda talabalar nafaqat nazariy bilim olishadi, balki haqiqiy ish sharoitlarida qo'llash mumkin bo'lgan amaliy ko'nikmalarni ham egallashadi.",
+        "about-desc":
+          "Chilonzor tuman 1-son texnikumi yillar davomida yoshlarga professional ta'lim berib kelmoqda. Bizning missiyamiz – har bir talabaga haqiqiy kasb-hunar ko'nikmalarini o'rgatish va ularni ish hayotiga tayyorlashdir. Biz amaliy ta'limga alohida e'tibor beramiz. Har bir yo'nalishda talabalar nafaqat nazariy bilim olishadi, balki haqiqiy ish sharoitlarida qo'llash mumkin bo'lgan amaliy ko'nikmalarni ham egallashadi.",
         "stat-students": "Talabalar",
         "stat-teachers": "Tajribali o'qituvchilar",
         "stat-directions": "Ta'lim yo'nalishlari",
         "stat-employment": "Talabalarning bandligi",
 
         "feature1-title": "Zamonaviy o'quv xonalari",
-        "feature1-desc": "O'quvchilarning samarali bilim olishi uchun qulay sharoit yaratilgan, zamonaviy texnika va jihozlar bilan ta'minlangan, yorug' va dars jarayonini yanada qiziqarli o'tkazishga yordam beradigan o'quv xonalari.",
+        "feature1-desc":
+          "O'quvchilarning samarali bilim olishi uchun qulay sharoit yaratilgan, zamonaviy texnika va jihozlar bilan ta'minlangan, yorug' va dars jarayonini yanada qiziqarli o'tkazishga yordam beradigan o'quv xonalari.",
         "feature2-title": "Malakali o'qituvchilar",
-        "feature2-desc": "O'z fanini chuqur bilib, bilimni o'quvchilarga tushunarli va samarali tarzda yetkazadigan, tajribali hamda zamonaviy usullardan foydalana oladigan ustozlar guruhi.",
+        "feature2-desc":
+          "O'z fanini chuqur bilib, bilimni o'quvchilarga tushunarli va samarali tarzda yetkazadigan, tajribali hamda zamonaviy usullardan foydalana oladigan ustozlar guruhi.",
         "feature3-title": "Rahbariyat",
-        "feature3-desc": "Texnikum faoliyatini boshqaruvchi, ta'lim sifatini ta'minlovchi va muassasaning rivoji hamda tartibli ishlashini tashkil etuvchi mas'ul boshqaruv jamoasidir.",
-        "more": "Batafsil",
+        "feature3-desc":
+          "Texnikum faoliyatini boshqaruvchi, ta'lim sifatini ta'minlovchi va muassasaning rivoji hamda tartibli ishlashini tashkil etuvchi mas'ul boshqaruv jamoasidir.",
+        more: "Batafsil",
 
-        "partners": "Hamkor kompaniyalar",
+        partners: "Hamkor kompaniyalar",
 
-        "dep1": "Xalqaro ta'lim dasturi asosida (9-sinf negizida)",
-        "dep2": "Milliy ta'lim dasturi asosida (9-sinf bitiruvchilari uchun)",
-        "dep3": "Dual ta'lim dasturi asosida (9-sinf negizida)",
-        "dep4": "Dual ta'lim dasturi asosida (11-sinf negizida)",
-        "dep5": "11-sinf bitiruvchilari uchun (To'lov shartnomasi asosida)",
+        dep1: "Xalqaro ta'lim dasturi asosida (9-sinf negizida)",
+        dep2: "Milliy ta'lim dasturi asosida (9-sinf bitiruvchilari uchun)",
+        dep3: "Dual ta'lim dasturi asosida (9-sinf negizida)",
+        dep4: "Dual ta'lim dasturi asosida (11-sinf negizida)",
+        dep5: "11-sinf bitiruvchilari uchun (To'lov shartnomasi asosida)",
 
-        "footer-description": "Chilonzor tuman 1-son Texnikumi - sifatli ta'lim va bilim manbai.",
+        "footer-description":
+          "Chilonzor tuman 1-son Texnikumi - sifatli ta'lim va bilim manbai.",
         "quick-links": "Tezkor havolalar",
-        "administration": "Ma'muriyat",
-        "address": "Manzil: Toshkent shahar, Chilonzor tumani, 20-D mavze, Katta Qa'ni ko'chasi 52 uy",
-        "rights": "Barcha huquqlar himoyalangan!"
+        administration: "Ma'muriyat",
+        address:
+          "Manzil: Toshkent shahar, Chilonzor tumani, 20-D mavze, Katta Qa'ni ko'chasi 52 uy",
+        rights: "Barcha huquqlar himoyalangan!",
       },
 
       ru: {
-        "title": "Техникум №1",
+        title: "Техникум №1",
         "title-text": "Чиланзарский район\nТехникум №1",
-        "home": "Главная",
-        "departments": "Профессии",
-        "about": "О нас",
+        home: "Главная",
+        departments: "Профессии",
+        about: "О нас",
         "about-title": "О нас",
-        "management": "Руководство",
-        "contact": "Контакты",
-        "location": "Местоположение",
+        management: "Руководство",
+        contact: "Контакты",
+        location: "Местоположение",
 
         "hero-title": "Техникум №1 Чиланзарского района",
-        "hero-subtitle": "Здесь вы найдёте всю информацию о современных учебных кабинетах техникума, квалифицированных преподавателях и образовательном процессе.",
+        "hero-subtitle":
+          "Здесь вы найдёте всю информацию о современных учебных кабинетах техникума, квалифицированных преподавателях и образовательном процессе.",
 
         "about-heading": "О нашем техникуме",
-        "about-desc": "Техникум №1 Чиланзарского района на протяжении многих лет даёт молодёжи профессиональное образование. Наша миссия — обучить каждого студента реальным профессиональным навыкам и подготовить их к трудовой жизни. Мы уделяем особое внимание практическому обучению. По каждому направлению студенты получают не только теоретические знания, но и практические навыки, применимые в реальных рабочих условиях.",
+        "about-desc":
+          "Техникум №1 Чиланзарского района на протяжении многих лет даёт молодёжи профессиональное образование. Наша миссия — обучить каждого студента реальным профессиональным навыкам и подготовить их к трудовой жизни. Мы уделяем особое внимание практическому обучению. По каждому направлению студенты получают не только теоретические знания, но и практические навыки, применимые в реальных рабочих условиях.",
         "stat-students": "Студенты",
         "stat-teachers": "Опытные преподаватели",
         "stat-directions": "Направления обучения",
         "stat-employment": "Трудоустройство студентов",
 
         "feature1-title": "Современные учебные кабинеты",
-        "feature1-desc": "Учебные кабинеты, оборудованные современной техникой и инвентарём, создающие комфортные условия для эффективного обучения и делающие уроки более интересными.",
+        "feature1-desc":
+          "Учебные кабинеты, оборудованные современной техникой и инвентарём, создающие комфортные условия для эффективного обучения и делающие уроки более интересными.",
         "feature2-title": "Квалифицированные преподаватели",
-        "feature2-desc": "Группа опытных педагогов, глубоко знающих свой предмет и умеющих доступно и эффективно передавать знания студентам, используя современные методы обучения.",
+        "feature2-desc":
+          "Группа опытных педагогов, глубоко знающих свой предмет и умеющих доступно и эффективно передавать знания студентам, используя современные методы обучения.",
         "feature3-title": "Руководство",
-        "feature3-desc": "Ответственная управленческая команда, которая руководит деятельностью техникума, обеспечивает качество образования и организует развитие и слаженную работу учреждения.",
-        "more": "Подробнее",
+        "feature3-desc":
+          "Ответственная управленческая команда, которая руководит деятельностью техникума, обеспечивает качество образования и организует развитие и слаженную работу учреждения.",
+        more: "Подробнее",
 
-        "partners": "Компании-партнёры",
+        partners: "Компании-партнёры",
 
-        "dep1": "На основе международной учебной программы (на базе 9 класса)",
-        "dep2": "На основе национальной учебной программы (для выпускников 9 класса)",
-        "dep3": "На основе программы дуального обучения (на базе 9 класса)",
-        "dep4": "На основе программы дуального обучения (на базе 11 класса)",
-        "dep5": "Для выпускников 11 класса (на основе договора об оплате)",
+        dep1: "На основе международной учебной программы (на базе 9 класса)",
+        dep2: "На основе национальной учебной программы (для выпускников 9 класса)",
+        dep3: "На основе программы дуального обучения (на базе 9 класса)",
+        dep4: "На основе программы дуального обучения (на базе 11 класса)",
+        dep5: "Для выпускников 11 класса (на основе договора об оплате)",
 
-        "footer-description": "Техникум №1 Чиланзарского района — источник качественного образования и знаний.",
+        "footer-description":
+          "Техникум №1 Чиланзарского района — источник качественного образования и знаний.",
         "quick-links": "Быстрые ссылки",
-        "administration": "Администрация",
-        "address": "Адрес: г. Ташкент, Чиланзарский район, 20-D массив, ул. Катта Қаъни, дом 52",
-        "rights": "Все права защищены!"
+        administration: "Администрация",
+        address:
+          "Адрес: г. Ташкент, Чиланзарский район, 20-D массив, ул. Катта Қаъни, дом 52",
+        rights: "Все права защищены!",
       },
 
       en: {
-        "title": "Technical College No. 1",
+        title: "Technical College No. 1",
         "title-text": "Chilonzor District\nTechnical College No. 1",
-        "home": "Home",
-        "departments": "Professions",
-        "about": "About Us",
+        home: "Home",
+        departments: "Professions",
+        about: "About Us",
         "about-title": "About Us",
-        "management": "Management",
-        "contact": "Contact",
-        "location": "Location",
+        management: "Management",
+        contact: "Contact",
+        location: "Location",
 
         "hero-title": "Chilonzor District Technical College No. 1",
-        "hero-subtitle": "Here you will find all information about the college's modern classrooms, qualified teachers and educational process.",
+        "hero-subtitle":
+          "Here you will find all information about the college's modern classrooms, qualified teachers and educational process.",
 
         "about-heading": "About Our College",
-        "about-desc": "Chilonzor District Technical College No. 1 has been providing professional education to young people for many years. Our mission is to teach every student real professional skills and prepare them for working life. We place special emphasis on practical training. In each field, students gain not only theoretical knowledge but also practical skills applicable in real working conditions.",
+        "about-desc":
+          "Chilonzor District Technical College No. 1 has been providing professional education to young people for many years. Our mission is to teach every student real professional skills and prepare them for working life. We place special emphasis on practical training. In each field, students gain not only theoretical knowledge but also practical skills applicable in real working conditions.",
         "stat-students": "Students",
         "stat-teachers": "Experienced Teachers",
         "stat-directions": "Educational Directions",
         "stat-employment": "Student Employment Rate",
 
         "feature1-title": "Modern Classrooms",
-        "feature1-desc": "Classrooms equipped with modern technology and facilities, creating comfortable conditions for effective learning and making lessons more engaging.",
+        "feature1-desc":
+          "Classrooms equipped with modern technology and facilities, creating comfortable conditions for effective learning and making lessons more engaging.",
         "feature2-title": "Qualified Teachers",
-        "feature2-desc": "A team of experienced educators who deeply know their subject and can convey knowledge to students in a clear and effective manner using modern teaching methods.",
+        "feature2-desc":
+          "A team of experienced educators who deeply know their subject and can convey knowledge to students in a clear and effective manner using modern teaching methods.",
         "feature3-title": "Management",
-        "feature3-desc": "The responsible management team that oversees college operations, ensures education quality and organises the development and smooth running of the institution.",
-        "more": "Learn More",
+        "feature3-desc":
+          "The responsible management team that oversees college operations, ensures education quality and organises the development and smooth running of the institution.",
+        more: "Learn More",
 
-        "partners": "Partner Companies",
+        partners: "Partner Companies",
 
-        "dep1": "Based on the International Education Program (9th grade basis)",
-        "dep2": "Based on the National Education Program (for 9th grade graduates)",
-        "dep3": "Based on the Dual Education Program (9th grade basis)",
-        "dep4": "Based on the Dual Education Program (11th grade basis)",
-        "dep5": "For 11th grade graduates (Based on a paid contract)",
+        dep1: "Based on the International Education Program (9th grade basis)",
+        dep2: "Based on the National Education Program (for 9th grade graduates)",
+        dep3: "Based on the Dual Education Program (9th grade basis)",
+        dep4: "Based on the Dual Education Program (11th grade basis)",
+        dep5: "For 11th grade graduates (Based on a paid contract)",
 
-        "footer-description": "Chilonzor District Technical College No. 1 — a source of quality education and knowledge.",
+        "footer-description":
+          "Chilonzor District Technical College No. 1 — a source of quality education and knowledge.",
         "quick-links": "Quick Links",
-        "administration": "Administration",
-        "address": "Address: Tashkent city, Chilonzor district, 20-D massiv, Katta Qa'ni street, house 52",
-        "rights": "All rights reserved!"
-      }
+        administration: "Administration",
+        address:
+          "Address: Tashkent city, Chilonzor district, 20-D massiv, Katta Qa'ni street, house 52",
+        rights: "All rights reserved!",
+      },
     };
 
     function changeLanguage() {
       const lang = document.getElementById("language").value;
       const t = translations[lang];
 
-      document.querySelectorAll("[data-lang]").forEach(el => {
+      document.querySelectorAll("[data-lang]").forEach((el) => {
         const key = el.getAttribute("data-lang");
         if (t[key] !== undefined) {
           if (key === "title-text") {
@@ -1162,7 +1567,9 @@
 
     // Navbar scroll effect
     window.addEventListener("scroll", () => {
-      document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+      document
+        .querySelector(".navbar")
+        .classList.toggle("scrolled", window.scrollY > 50);
     });
   </script>
 </body>
