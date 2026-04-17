@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-lang="title">Shartnoma asosida</title>
+  <link rel="icon" type="image/png" href="logotip.png" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<style>
+  :root {
+    --primary-color: #3a86ff;
+    --secondary-color: #8338ec;
+    --accent-color: #ff006e;
+    --text-color: #2b2d42;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+    color: var(--text-color);
+  }
+
+  .hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://img.freepik.com/premium-photo/colorful-books-blue-background_392895-174150.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.3s forwards;
+    opacity: 0;
+  }
+
+  .btn-custom {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease 0.6s forwards;
+    opacity: 0;
+  }
+
+  .btn-custom:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar {
+    background-color: transparent;
+    transition: all 0.3s ease;
+    padding: 15px 0;
+  }
+
+  .navbar.scrolled {
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    height: 65px;
+    width: 70px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: scale(1.1);
+  }
+
+  .navbar-brand-text {
+    font-weight: 700;
+    color: white;
+    transition: color 0.3s ease;
+  }
+
+  .scrolled .navbar-brand-text {
+    color: var(--primary-color);
+  }
+
+  .nav-link {
+    color: white;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .scrolled .nav-link {
+    color: var(--text-color);
+  }
+
+  .nav-link:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover:after {
+    width: 100%;
+  }
+
+  .nav-link:hover {
+    color: var(--accent-color);
+  }
+
+  .language-selector {
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .scrolled .language-selector {
+    color: var(--text-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .language-selector:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .scrolled .language-selector:hover {
+    background-color: rgba(0, 0, 0, this, 0.05);
+  }
+
+  .navbar-toggler {
+    border: none;
+    padding: 0;
+    color: white;
+  }
+
+  .scrolled .navbar-toggler {
+    color: var(--text-color);
+  }
+
+  .hamburger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: 0;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  .hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  .scrolled .hamburger-icon span {
+    background: var(--text-color);
+  }
+
+  .hamburger-icon span:nth-child(1) {
+    top: 0px;
+  }
+
+  .hamburger-icon span:nth-child(2) {
+    top: 8px;
+  }
+
+  .hamburger-icon span:nth-child(3) {
+    top: 16px;
+  }
+
+  .section-title {
+    position: relative;
+    margin-bottom: 50px;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  .section-title:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .feature-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    height: 100%;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  .feature-card img {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .feature-card-body {
+    padding: 20px;
+  }
+
+  .feature-card-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+
+  .feature-card-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+  }
+
+  .feature-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .department-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  .department-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+
+  footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 50px 0 20px;
+  }
+
+  .footer-logo {
+    height: 60px;
+    width: 65px;
+    margin-bottom: 20px;
+  }
+
+  .footer-links h5 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .footer-links h5:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 0;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+  }
+
+  .social-icons {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+  }
+
+  .copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Media Queries */
+  @media (max-width: 991px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .navbar-collapse {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-collapse .nav-link {
+      color: var(--text-color);
+    }
+
+    .navbar-collapse .language-selector {
+      color: var(--text-color);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  .navvv {
+    background-color: rgb(11, 9, 61);
+  }
+
+  .selectt_option {
+    background: none;
+    color: black;
+  }
+</style>
+
+<style>
+  main {
+    padding-top: 130px;
+  }
+
+  .section1,
+  .section2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .text_kasb,
+  .text_kasb2 {
+    max-width: 500px;
+  }
+
+  .text_kasb2 {
+    color: #fff;
+  }
+
+  .img_kasb,
+  .img_kasb2 {
+    border-radius: 10px;
+    padding: 30px;
+  }
+
+  .img_kasb {
+    border: 1px solid rgb(11, 9, 61);
+  }
+
+  .img_kasb2 {
+    border: 1px solid #fff;
+  }
+
+  .text_title2 {
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+
+    .section1,
+    .section2 {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .img_kasb,
+    .img_kasb2 {
+      width: 100%;
+      max-width: 450px;
+      padding: 15px;
+    }
+
+    .text_kasb,
+    .text_kasb2 {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+</style>
+
+<body>
+  <a href="https://t.me/chilonzor1texnikumi" target="_blank" class="tg-btn">
+
+    <span class="ring"></span>
+    <span class="ring ring2"></span>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="tg-icon" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M9.993 15.674l-.396 5.585c.567 0 .813-.244 1.108-.537l2.655-2.539 5.502 4.025c1.009.557 1.724.264 1.976-.934l3.584-16.807c.296-1.379-.498-1.918-1.478-1.556L1.67 9.53c-1.345.523-1.326 1.277-.229 1.614l5.858 1.828L20.49 5.29c.623-.38 1.19-.17.723.21" />
+    </svg>
+
+  </a>
+
+  <style>
+    .tg-btn {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      background: #0088cc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 9999;
+      box-shadow: 0 0 15px rgba(0, 136, 204, 0.6);
+    }
+
+    .tg-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* ripple */
+    .ring {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #00bfff;
+      animation: ripple 2s infinite;
+    }
+
+    .ring2 {
+      animation-delay: 1s;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
+    }
+
+    /* responsive */
+    @media (max-width:480px) {
+
+      .tg-btn {
+        width: 48px;
+        height: 48px;
+        left: 15px;
+        bottom: 15px;
+      }
+
+      .tg-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .ring {
+        width: 48px;
+        height: 48px;
+      }
+
+    }
+  </style>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top navvv">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="logotip.png" alt="logo" class="logo" />
+        <span class="navbar-brand-text" data-lang="title-text">Chilonzor tumani <br> 1-son Texnikumi</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="politexnikum.html" data-lang="home">Bosh sahifa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="politexnikum.html" data-lang="departments">Kasblar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="politexnikum.html" data-lang="about">Biz haqimizda</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="politexnikum.html" data-lang="management">Rahbariyat</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="politexnikum.html" data-lang="contact">Aloqa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://maps.app.goo.gl/m2LWkvW9geqS2PzR7" target="_blank">
+              <span data-lang="location">Joylashuv</span>
+              <i class="fas fa-map-marker-alt me-2"></i>
+            </a>
+          </li>
+          <!-- TIL SELECT TUGMASI (ESKI KO'RINISH) VA TO'LIQ MULTILANG -->
+          <!-- NAVBAR ICHIDA TIL SELECT -->
+          <li class="nav-item">
+            <select id="language" class="language-selector selectt" onchange="changeLanguage()">
+              <option class="selectt_option" value="uz">O'zbek</option>
+              <option class="selectt_option" value="ru">Русский</option>
+              <option class="selectt_option" value="en">English</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h2 class="text-center section-title" data-lang="features" style="color: rgb(11, 9, 61);">
+      11-sinf bitiruvchilari uchun (To'lov shartnomasi asosida)
+    </h2>
+    <!DOCTYPE html>
+    <html lang="uz">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <style>
+        /* ===== TEXT DESIGN ===== */
+        .kasb-badge {
+          display: inline-block;
+          background: #eeedfe;
+          color: #3c3489;
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-size: 13px;
+          margin-bottom: 12px;
+        }
+
+        .text_title {
+          font-size: 30px;
+          font-weight: 700;
+          margin-bottom: 15px;
+        }
+
+        .text_kasb {
+          color: #555;
+          font-size: 16px;
+          line-height: 1.7;
+        }
+
+        /* ===== TAG ===== */
+        .kasb-tags {
+          display: flex;
+          gap: 10px;
+          margin-top: 15px;
+          flex-wrap: wrap;
+        }
+
+        .tag {
+          border: 1px solid #ddd;
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-size: 13px;
+          color: #666;
+        }
+
+        /* ===== IMAGE FRAME ===== */
+        .img-wrap-light {
+          background: #f3f1fb;
+          border-radius: 20px;
+          padding: 18px;
+          border: 2px solid #dcd8ff;
+        }
+
+        .img-inner-light {
+          border: 2px solid #c9c5ff;
+          border-radius: 16px;
+          padding: 10px;
+        }
+
+        .img_kasb {
+          width: 100%;
+          max-width: 420px;
+          margin: auto;
+          display: block;
+          border-radius: 12px;
+        }
+
+        /* ===== ANIMATION ===== */
+        .section1 {
+          overflow: hidden;
+        }
+
+        .reveal-left {
+          opacity: 0;
+          transform: translateX(-60px);
+          transition: .7s;
+        }
+
+        .reveal-right {
+          opacity: 0;
+          transform: translateX(60px);
+          transition: .7s;
+        }
+
+        .visible {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        /* ===== MOBILE ===== */
+        @media(max-width:768px) {
+
+          .reveal-left,
+          .reveal-right {
+            transform: translateY(40px);
+          }
+
+          .visible {
+            transform: translateY(0);
+          }
+
+          .kasb-tags {
+            justify-content: center;
+          }
+
+          .text_title {
+            font-size: 22px;
+            text-align: center;
+          }
+
+          .text_kasb {
+            text-align: center;
+          }
+        }
+      </style>
+    </head>
+
+    <body>
+
+      <!-- ===== SECTION ===== -->
+      <section class="py-5">
+        <div class="container">
+          <div class="section1 row align-items-center g-4">
+
+            <!-- TEXT -->
+            <div class="col-md-6 reveal-left">
+              <span class="kasb-badge">Kasb</span>
+
+              <h2 class="text_title">
+                Mexatronika va robototexnika
+              </h2>
+
+              <hr />
+
+              <p class="text_kasb">
+                Mexatronika va robototexnika — mexanika, elektronika va dasturlashni
+                birlashtirgan zamonaviy texnologiya sohasidir. Ushbu yo‘nalish
+                mutaxassislari robotlar va avtomatlashtirilgan tizimlarni yaratish,
+                sozlash va boshqarish bilan shug‘ullanadi.
+
+                Ular ishlab chiqarish korxonalarida robotlashtirilgan tizimlarni
+                loyihalash, o‘rnatish va texnik xizmat ko‘rsatish ishlarini amalga oshiradi.
+
+                Bu kasb IT va sanoat sohasida juda talabgir bo‘lib, texnik bilim,
+                mantiqiy fikrlash va dasturlash ko‘nikmalarini talab qiladi.
+              </p>
+
+              <!-- TAG -->
+              <div class="kasb-tags">
+                <span class="tag">Robototexnika</span>
+                <span class="tag">IT</span>
+                <span class="tag">Avtomatlashtirish</span>
+              </div>
+            </div>
+
+            <!-- IMAGE -->
+            <div class="col-md-6 text-center reveal-right">
+              <div class="img-wrap-light">
+                <div class="img-inner-light">
+                  <img class="img_kasb img-fluid" src="robot.png" alt="kasb">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCRIPT ===== -->
+      <script>
+        const els = document.querySelectorAll('.reveal-left, .reveal-right');
+
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+            } else {
+              e.target.classList.remove('visible');
+            }
+          });
+        }, { threshold: 0.2 });
+
+        els.forEach(el => io.observe(el));
+      </script>
+
+    </body>
+
+    </html>
+  </main>
+
+  <!-- Footer -->
+  <footer id="aloqa" style="background-color: rgb(11, 9, 61)">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <img src="logotip.png" alt="logo" class="footer-logo" />
+          <p data-lang="footer-description" style="width: 300px">
+            Chilonzor tuman 1-son Texnikumi - sifatli ta'lim va bilim manbai.
+          </p>
+          <div class="social-icons">
+            <a href="mavjudemas.html"><i class="fab fa-facebook-f"></i></a>
+            <a href="yutbmavjudemas.html" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/chilonzor1texnikum?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/chilonzor1texnikumi" target="_blank"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4">
+          <div class="footer-links">
+            <h5 data-lang="quick-links">Tezkor havolalar</h5>
+            <ul>
+              <li><a href="politexnikum.html" data-lang="home">Bosh sahifa</a></li>
+              <li><a href="politexnikum.html" data-lang="departments">Kasblar</a></li>
+              <li><a href="politexnikum.html" data-lang="about">Biz haqimizda</a></li>
+              <li><a href="politexnikum.html" data-lang="contact">Aloqa</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <div class="footer-links">
+            <h5 data-lang="administration">Ma'muriyat</h5>
+            <ul>
+              <li><a href="rahbariyat.html" data-lang="management">Rahbariyat</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <div class="footer-links">
+            <h5 data-lang="contact">Aloqa</h5>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i>
+                <span data-lang="address">Manzil: Toshkent shahar, Chilonzor tumani, 20-D mavze, Katta Qa'ni ko'chasi 52
+                  uy</span>
+              </li>
+              <li>
+                <i class="fas fa-phone me-2"></i>
+                <a href="tel:+998700494984">+998 70-049-49-84</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>
+          &copy; 2026
+          <span data-lang="title-text">Chilonzor tuman 1-son Texnikumi. </span>
+          <span data-lang="rights" style="text-decoration: none;">Barcha huquqlar himoyalangan!</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const translations = {
+      uz: {
+        "title": "Shartnoma asosida",
+        "title-text": "Chilonzor tumani\n1-son Texnikumi",
+        "home": "Bosh sahifa",
+        "departments": "Kasblar",
+        "about": "Biz haqimizda",
+        "contact": "Aloqa",
+        "location": "Joylashuv",
+
+        "features": "11-sinf bitiruvchilari uchun (To'lov shartnomasi asosida)",
+
+        "prof-title": "Mexatronika va robototexnika.",
+        "prof-desc": "Mexatronika va robototexnika — bu mexanika, elektronika va dasturlashni birlashtirgan zamonaviy texnologiya sohasidir. Ushbu kasb egalari robotlar, avtomatlashtirilgan qurilmalar va aqlli texnik tizimlarni yaratish, sozlash va boshqarish bilan shug'ullanadilar. Mexatronika mutaxassislari turli ishlab chiqarish korxonalarida robotlashtirilgan tizimlarni loyihalash, o'rnatish va ularga xizmat ko'rsatish ishlarini amalga oshiradilar. Bu kasb sanoat, IT va zamonaviy texnologiyalar sohasida juda talabgir bo'lib, texnik bilim, mantiqiy fikrlash va dasturlash ko'nikmalarini talab qiladi.",
+
+        "footer-description": "Chilonzor tuman 1-son Texnikumi - sifatli ta'lim va bilim manbai.",
+        "quick-links": "Tezkor havolalar",
+        "student-services": "O'qituvchilar",
+        "schedule": "Malakali o'qituvchilar",
+        "address": "Manzil: Toshkent shahar, Chilonzor tumani, 20-D mavze, Katta Qa'ni ko'chasi 52 uy",
+        "rights": "Barcha huquqlar himoyalangan"
+      },
+
+      ru: {
+        "title": "На основе договора об оплате",
+        "title-text": "Чиланзарский район\nТехникум №1",
+        "home": "Главная",
+        "departments": "Профессии",
+        "about": "О нас",
+        "contact": "Контакты",
+        "location": "Местоположение",
+
+        "features": "Для выпускников 11 класса (На основе договора об оплате)",
+
+        "prof-title": "Мехатроника и робототехника.",
+        "prof-desc": "Мехатроника и робототехника — это современная технологическая отрасль, объединяющая механику, электронику и программирование. Специалисты этой профессии занимаются созданием, настройкой и управлением роботами, автоматизированными устройствами и умными техническими системами. Специалисты по мехатронике проектируют, устанавливают роботизированные системы и обслуживают их на различных производственных предприятиях. Эта профессия очень востребована в сфере промышленности, IT и современных технологий и требует технических знаний, логического мышления и навыков программирования.",
+
+        "footer-description": "Техникум №1 Чиланзарского района — источник качественного образования и знаний.",
+        "quick-links": "Быстрые ссылки",
+        "student-services": "Преподаватели",
+        "schedule": "Квалифицированные преподаватели",
+        "address": "Адрес: г. Ташкент, Чиланзарский район, 20-D массив, ул. Катта Қаъни, дом 52",
+        "rights": "Все права защищены"
+      },
+
+      en: {
+        "title": "Based on a Paid Contract",
+        "title-text": "Chilonzor District\nTechnical College No. 1",
+        "home": "Home",
+        "departments": "Professions",
+        "about": "About Us",
+        "contact": "Contact",
+        "location": "Location",
+
+        "features": "For 11th Grade Graduates (Based on a Paid Contract)",
+
+        "prof-title": "Mechatronics and Robotics.",
+        "prof-desc": "Mechatronics and robotics is a modern technology field that combines mechanics, electronics and programming. Specialists in this profession are engaged in creating, configuring and managing robots, automated devices and intelligent technical systems. Mechatronics specialists design, install and service robotic systems at various manufacturing enterprises. This profession is highly in demand in the industrial, IT and modern technology sectors and requires technical knowledge, logical thinking and programming skills.",
+
+        "footer-description": "Chilonzor District Technical College No. 1 — a source of quality education and knowledge.",
+        "quick-links": "Quick Links",
+        "student-services": "Teachers",
+        "schedule": "Qualified Teachers",
+        "address": "Address: Tashkent city, Chilonzor district, 20-D massiv, Katta Qa'ni street, house 52",
+        "rights": "All rights reserved"
+      }
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById('language').value;
+      const t = translations[lang];
+
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if (t[key] !== undefined) {
+          if (key === 'title-text') {
+            el.innerHTML = t[key].replace(/\n/g, '<br>');
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      });
+
+      document.title = t['title'] || document.title;
+      document.documentElement.lang = lang;
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang="title">Rahbariyat — Chilonzor 1-son Texnikumi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="logotip.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #3a86ff;
+        --secondary-color: #8338ec;
+        --accent-color: #ff006e;
+        --text-color: #2b2d42;
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f9fa;
+        color: var(--text-color);
+      }
+
+      /* ========== NAVBAR ========== */
+      .navbar {
+        background-color: rgb(11, 9, 61);
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      }
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+      }
+      .logo {
+        height: 65px;
+        width: 70px;
+        margin-right: 10px;
+        transition: transform 0.3s ease;
+      }
+      .logo:hover {
+        transform: scale(1.1);
+      }
+      .navbar-brand-text {
+        font-weight: 700;
+        color: white;
+        font-size: 0.95rem;
+        line-height: 1.35;
+      }
+
+      .nav-link {
+        color: white !important;
+        font-weight: 500;
+        margin: 0 8px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      .nav-link.active-page {
+        color: var(--accent-color) !important;
+      }
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover:after,
+      .nav-link.active-page:after {
+        width: 100%;
+      }
+      .nav-link:hover {
+        color: var(--accent-color) !important;
+      }
+
+      .language-selector {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background-color: transparent;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        outline: none;
+      }
+      .language-selector option {
+        background: rgb(11, 9, 61);
+        color: white;
+      }
+
+      .hamburger-icon {
+        width: 30px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+      }
+      .hamburger-icon span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: white;
+        border-radius: 9px;
+        left: 0;
+        transition: 0.25s ease-in-out;
+      }
+      .hamburger-icon span:nth-child(1) {
+        top: 0;
+      }
+      .hamburger-icon span:nth-child(2) {
+        top: 8px;
+      }
+      .hamburger-icon span:nth-child(3) {
+        top: 16px;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-collapse {
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          margin-top: 10px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-collapse .nav-link {
+          color: var(--text-color) !important;
+        }
+        .navbar-collapse .language-selector {
+          color: var(--text-color);
+          border-color: rgba(0, 0, 0, 0.1);
+          margin-top: 10px;
+        }
+      }
+
+      /* ========== SECTION TITLE ========== */
+      .section-title {
+        position: relative;
+        margin-bottom: 50px;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background-color: var(--accent-color);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* ========== RAHBARIYAT ========== */
+      .rahbariyat-section {
+        padding: 110px 20px 80px;
+        background: #f0f4f8;
+      }
+      .rahbariyat-section > .container > h2 {
+        font-size: clamp(22px, 5vw, 34px);
+        font-weight: 700;
+        color: #0b3d91;
+        letter-spacing: 1px;
+        margin-bottom: 50px;
+      }
+
+      /* ===== DIRECTOR CARD ===== */
+      .director-card {
+        background: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 6px 30px rgba(11, 61, 145, 0.12);
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+      .director-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 40px rgba(11, 61, 145, 0.2);
+      }
+
+      .director-img-col {
+        width: 300px;
+        flex-shrink: 0;
+        overflow: hidden;
+        background: #e8eef7;
+        position: relative;
+      }
+      .director-img-col img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+      }
+      .director-ribbon {
+        position: absolute;
+        top: 20px;
+        left: -28px;
+        background: #0b3d91;
+        color: #fff;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 5px 44px;
+        transform: rotate(-45deg);
+      }
+
+      .director-info {
+        flex: 1;
+        padding: 36px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+      }
+      .director-name-text {
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 4px;
+        line-height: 1.3;
+      }
+      .rahbar-divider {
+        width: 38px;
+        height: 3px;
+        background: #0b3d91;
+        border-radius: 2px;
+        margin: 12px 0;
+      }
+      .director-position {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #0b3d91;
+        margin-bottom: 18px;
+      }
+      .resp-title {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--accent-color);
+        margin-bottom: 10px;
+      }
+      .resp-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .resp-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        font-size: 0.84rem;
+        color: #555;
+        line-height: 1.55;
+      }
+      .resp-list li::before {
+        content: "";
+        flex-shrink: 0;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #0b3d91;
+        margin-top: 6px;
+      }
+      .director-contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .contact-chip {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        background: #f0f4f8;
+        border: 1px solid #dde3ef;
+        color: #0b3d91;
+        font-size: 0.78rem;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .contact-chip:hover {
+        background: #0b3d91;
+        color: #fff;
+      }
+      .contact-chip i {
+        font-size: 0.78rem;
+      }
+
+      @media (max-width: 700px) {
+        .director-img-col {
+          width: 100%;
+          height: 280px;
+        }
+        .director-info {
+          padding: 24px 22px;
+        }
+        .director-name-text {
+          font-size: 1.25rem;
+        }
+      }
+
+      /* ===== DEPUTY GRID ===== */
+      .rahbar-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .rahbar-card {
+        background: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 6px 24px rgba(11, 61, 145, 0.1);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+      }
+      .rahbar-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 14px 36px rgba(11, 61, 145, 0.18);
+      }
+
+      .rahbar-img-wrapper {
+        width: 100%;
+        aspect-ratio: 3 / 3.2;
+        overflow: hidden;
+        background: #e8eef7;
+      }
+      .rahbar-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .rahbar-card:hover .rahbar-img-wrapper img {
+        transform: scale(1.05);
+      }
+
+      .rahbar-info {
+        padding: 18px 18px 20px;
+      }
+      .rahbar-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #111;
+        line-height: 1.4;
+        margin-bottom: 6px;
+      }
+      .rahbar-lavozim {
+        font-size: 13px;
+        font-weight: 700;
+        color: #0b3d91;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .resp-deputy {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        border-top: 1px solid #e8eef7;
+        padding-top: 12px;
+        margin-top: 4px;
+      }
+      .resp-deputy li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 0.78rem;
+        color: #666;
+        line-height: 1.5;
+      }
+      .resp-deputy li i {
+        color: var(--primary-color);
+        font-size: 0.7rem;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      .card-footer-row {
+        display: flex;
+        gap: 8px;
+        margin-top: 14px;
+        padding-top: 12px;
+        border-top: 1px solid #f0f4f8;
+      }
+      .card-footer-row a {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #f0f4f8;
+        border: 1px solid #dde3ef;
+        color: #0b3d91;
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .card-footer-row a:hover {
+        background: #0b3d91;
+        color: #fff;
+      }
+
+      /* Responsive grid */
+      @media (max-width: 1199px) and (min-width: 992px) {
+        .rahbar-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 22px;
+        }
+      }
+      @media (max-width: 991px) and (min-width: 768px) {
+        .rahbar-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+      }
+      @media (max-width: 767px) and (min-width: 601px) {
+        .rahbar-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+      }
+      @media (max-width: 600px) and (min-width: 481px) {
+        .rahbar-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 14px;
+        }
+      }
+      @media (max-width: 480px) and (min-width: 381px) {
+        .rahbar-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+        .rahbar-name {
+          font-size: 12px;
+        }
+      }
+      @media (max-width: 380px) {
+        .rahbar-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          max-width: 340px;
+        }
+      }
+
+      /* ========== FOOTER ========== */
+      footer {
+        background-color: rgb(11, 9, 61);
+        color: white;
+        padding: 50px 0 20px;
+      }
+      .footer-logo {
+        height: 60px;
+        width: 65px;
+        margin-bottom: 20px;
+      }
+      .footer-links h5 {
+        font-weight: 600;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+      .footer-links h5:after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        background-color: var(--accent-color);
+        bottom: 0;
+        left: 0;
+      }
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .footer-links a:hover {
+        color: var(--accent-color);
+        padding-left: 5px;
+      }
+
+      .contact-item-footer {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        font-size: 0.84rem;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+      .contact-item-footer i {
+        color: #fbbf24;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+      .contact-item-footer a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+      }
+      .contact-item-footer a:hover {
+        color: #fbbf24;
+      }
+
+      .social-icons {
+        display: flex;
+        margin-top: 20px;
+      }
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        margin-right: 10px;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+      .social-icons a:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* ========== TELEGRAM FLOAT ========== */
+      .tg-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        width: 60px;
+        height: 60px;
+        background: #0088cc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        z-index: 9999;
+        box-shadow: 0 0 15px rgba(0, 136, 204, 0.6);
+      }
+      .tg-icon {
+        width: 28px;
+        height: 28px;
+      }
+      .ring {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid #00bfff;
+        animation: ripple 2s infinite;
+      }
+      .ring2 {
+        animation-delay: 1s;
+      }
+      @keyframes ripple {
+        0% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(2.2);
+          opacity: 0;
+        }
+      }
+      @media (max-width: 480px) {
+        .tg-btn {
+          width: 48px;
+          height: 48px;
+          left: 15px;
+          bottom: 15px;
+        }
+        .tg-icon {
+          width: 22px;
+          height: 22px;
+        }
+        .ring {
+          width: 48px;
+          height: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Telegram -->
+    <a
+      href="https://t.me/Chilonzor1Politexnikum"
+      target="_blank"
+      class="tg-btn"
+    >
+      <span class="ring"></span>
+      <span class="ring ring2"></span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="tg-icon"
+        viewBox="0 0 24 24"
+        fill="white"
+      >
+        <path
+          d="M9.993 15.674l-.396 5.585c.567 0 .813-.244 1.108-.537l2.655-2.539 5.502 4.025c1.009.557 1.724.264 1.976-.934l3.584-16.807c.296-1.379-.498-1.918-1.478-1.556L1.67 9.53c-1.345.523-1.326 1.277-.229 1.614l5.858 1.828L20.49 5.29c.623-.38 1.19-.17.723.21"
+        />
+      </svg>
+    </a>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logotip.png" alt="logo" class="logo" />
+          <span class="navbar-brand-text" data-lang="brand-text"
+            >Chilonzor tumani <br />
+            1-son Texnikumi</span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <div class="hamburger-icon">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="politexnikum.html" data-lang="nav-home"
+                >Bosh sahifa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="politexnikum.html#kasblar"
+                data-lang="nav-departments"
+                >Kasblar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="politexnikum.html#bizhaqimizda"
+                data-lang="nav-about"
+                >Biz haqimizda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active-page"
+                href="politexnikum.html"
+                data-lang="nav-management"
+                >Rahbariyat</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="politexnikum.html"
+                data-lang="nav-contact"
+                >Aloqa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://maps.app.goo.gl/m2LWkvW9geqS2PzR7"
+                target="_blank"
+              >
+                <span data-lang="nav-location">Joylashuv</span>
+                <i class="fas fa-map-marker-alt ms-1"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <select
+                id="language"
+                class="language-selector"
+                onchange="changeLanguage()"
+              >
+                <option value="uz">O'zbek</option>
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- RAHBARIYAT SECTION -->
+    <section class="rahbariyat-section" id="rahbariyat">
+      <div class="container">
+        <h2 class="text-center section-title">Rahbariyat</h2>
+
+        <!-- DIREKTOR -->
+        <div class="director-card">
+          <div class="director-img-col">
+            <div class="director-ribbon">Direktor</div>
+            <img src="director.jpg" alt="" />
+          </div>
+
+          <div class="director-info">
+            <div class="director-name-text">Ataxanov Feruz Ravshanqulovich</div>
+            <div class="rahbar-divider"></div>
+            <div class="director-position">
+              Chilonzor tuman 1-son texnikumi direktori
+            </div>
+
+            <div class="resp-title">
+              <i class="fas fa-clock"></i> Qabul vaqti
+            </div>
+            <ul class="resp-list">
+              <li>Dushanba, Seshanba, Juma</li>
+              <li>14:00 dan 16:00 gacha</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- O'RINBOSARLAR -->
+        <h3 class="text-center mb-4" style="color: #0b3d91">
+          Direktor o‘rinbosarlari
+        </h3>
+
+        <div class="rahbar-grid">
+          <!-- Nazarova -->
+          <div class="rahbar-card">
+            <div class="rahbar-img-wrapper">
+              <img src="zulfiya.png" alt="" />
+            </div>
+            <div class="rahbar-info">
+              <div class="rahbar-name">Nazarova Zulfiya Baltabayevna</div>
+              <div class="rahbar-divider"></div>
+              <div class="rahbar-lavozim">
+                O‘quv ishlari bo‘yicha direktor o‘rinbosari
+              </div>
+
+              <ul class="resp-deputy">
+                <li><i class="fas fa-clock"></i> Ish vaqtida</li>
+                <li><i class="fas fa-clock"></i> 09:00 dan 16:00 gacha</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Ruslan -->
+          <div class="rahbar-card">
+            <div class="rahbar-img-wrapper">
+              <img src="ruslan.jpg" alt="" />
+            </div>
+            <div class="rahbar-info">
+              <div class="rahbar-name">Magametov Ruslan Taxirovich</div>
+              <div class="rahbar-divider"></div>
+              <div class="rahbar-lavozim">
+                Yoshlar ishlari bo‘yicha direktor o‘rinbosari
+              </div>
+
+              <ul class="resp-deputy">
+                <li><i class="fas fa-clock"></i> Ish vaqtida</li>
+                <li><i class="fas fa-clock"></i> 09:00 dan 16:00 gacha</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Saidjanov -->
+          <div class="rahbar-card">
+            <div class="rahbar-img-wrapper">
+              <img src="saidjanov.jpg" alt="" />
+            </div>
+            <div class="rahbar-info">
+              <div class="rahbar-name">Saidjanov Sobir Alimovich</div>
+              <div class="rahbar-divider"></div>
+              <div class="rahbar-lavozim">
+                Ishlab chiqarish ta’limi bo‘yicha direktor o‘rinbosari
+              </div>
+
+              <ul class="resp-deputy">
+                <li><i class="fas fa-clock"></i> Ish vaqtida</li>
+                <li><i class="fas fa-clock"></i> 09:00 dan 16:00 gacha</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Shoymanov -->
+          <div class="rahbar-card">
+            <div class="rahbar-img-wrapper">
+              <img src="shoymanov.jpg" alt="" />
+            </div>
+            <div class="rahbar-info">
+              <div class="rahbar-name">Shoymanov G‘anisher Alisher o‘g‘li</div>
+              <div class="rahbar-divider"></div>
+              <div class="rahbar-lavozim">
+                Xalqaro ta’lim dasturlarini muvofiqlashtirish bo‘limi boshlig‘i
+              </div>
+
+              <ul class="resp-deputy">
+                <li><i class="fas fa-clock"></i> Ish vaqtida</li>
+                <li><i class="fas fa-clock"></i> 09:00 dan 16:00 gacha</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="aloqa" style="background-color: rgb(11, 9, 61)">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <img src="logotip.png" alt="logo" class="footer-logo" />
+            <p data-lang="footer-description" style="width: 300px">
+              Chilonzor tuman 1-son Texnikumi - sifatli ta'lim va bilim manbai.
+            </p>
+            <div class="social-icons">
+              <a href="mavjudemas.html"><i class="fab fa-facebook-f"></i></a>
+              <a href="yutbmavjudemas.html" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/chilonzor1texnikum?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://t.me/chilonzor1texnikumi" target="_blank"
+                ><i class="fab fa-telegram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <div class="footer-links">
+              <h5 data-lang="quick-links">Tezkor havolalar</h5>
+              <ul>
+                <li>
+                  <a href="politexnikum.html" data-lang="home">Bosh sahifa</a>
+                </li>
+                <li>
+                  <a href="politexnikum.html" data-lang="departments"
+                    >Kasblar</a
+                  >
+                </li>
+                <li>
+                  <a href="politexnikum.html" data-lang="about"
+                    >Biz haqimizda</a
+                  >
+                </li>
+                <li>
+                  <a href="politexnikum.html" data-lang="contact">Aloqa</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-4">
+            <div class="footer-links">
+              <h5 data-lang="administration">Ma'muriyat</h5>
+              <ul>
+                <li>
+                  <a href="rahbariyat.html" data-lang="management"
+                    >Rahbariyat</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-4">
+            <div class="footer-links">
+              <h5 data-lang="contact">Aloqa</h5>
+              <ul>
+                <li>
+                  <i class="fas fa-map-marker-alt me-2"></i>
+                  <span data-lang="address"
+                    >Manzil: Toshkent shahar, Chilonzor tumani, 20-D mavze,
+                    Katta Qa'ni ko'chasi 52 uy</span
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-phone me-2"></i>
+                  <a href="tel:+998700494984">+998 70-049-49-84</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            &copy; 2026
+            <span data-lang="title-text"
+              >Chilonzor tuman 1-son Texnikumi.
+            </span>
+            <span data-lang="rights" style="text-decoration: none"
+              >Barcha huquqlar himoyalangan!</span
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      /* ============================================================
+     TRANSLATIONS
+  ============================================================ */
+      const translations = {
+        uz: {
+          title: "Rahbariyat — Chilonzor 1-son Texnikumi",
+          "brand-text": "Chilonzor tumani\n1-son Texnikumi",
+          "nav-home": "Bosh sahifa",
+          "nav-departments": "Kasblar",
+          "nav-about": "Biz haqimizda",
+          "nav-management": "Rahbariyat",
+          "nav-contact": "Aloqa",
+          "nav-location": "Joylashuv",
+
+          "section-title": "Rahbariyat",
+          "ribbon-director": "Direktor",
+          "director-position": "Chilonzor tumani 1-son Texnikumi Direktori",
+          responsibilities: "Asosiy mas'uliyatlar",
+
+          "dir-resp-1":
+            "Texnikumning umumiy faoliyatini boshqarish va strategik rejalashtirish",
+          "dir-resp-2":
+            "Ta'lim sifatini nazorat qilish va innovatsion usullarni joriy etish",
+          "dir-resp-3":
+            "Pedagogik va ma'muriy xodimlarni boshqarish, kadrlar siyosati",
+          "dir-resp-4":
+            "Davlat organlari, hamkor tashkilotlar va ota-onalar bilan hamkorlik",
+          "dir-resp-5":
+            "Muassasa byudjetini shakllantirish va moliyaviy nazorat",
+          "dir-resp-6":
+            "Texnikumning obro'sini mustahkamlash va xalqaro aloqalarni rivojlantirish",
+
+          "deputies-title": "Direktor O'rinbosarlari",
+
+          "dep1-position": "Yoshlar ishlari bo'yicha direktor o'rinbosari",
+          "dep1-r1": "Yoshlar tashkilotlari faoliyatini muvofiqlashtirish",
+          "dep1-r2": "Sport, madaniy va ijodiy tadbirlarni tashkil etish",
+          "dep1-r3": "O'quvchilar intizomini ta'minlash va tarbiyaviy ish",
+          "dep1-r4": "To'garaklar va yoshlar loyihalarini boshqarish",
+          "dep1-r5": "Yoshlar orasida huquqiy bilimlarni targ'ib qilish",
+
+          "dep2-position":
+            "Ishlab chiqarish ta'limi bo'yicha direktor o'rinbosari",
+          "dep2-r1":
+            "Amaliy mashg'ulotlar va ustaxona ishlarini nazorat qilish",
+          "dep2-r2": "Korxona va zavodlar bilan hamkorlikni yo'lga qo'yish",
+          "dep2-r3":
+            "O'quvchilarning ishlab chiqarish amaliyotini tashkil etish",
+          "dep2-r4": "Zamonaviy uskunalar va texnologiyalarni joriy etish",
+          "dep2-r5": "Kasbiy ko'nikmalar baholash va sertifikatlash",
+
+          "dep3-position": "O'quv ishlari bo'yicha direktor o'rinbosari",
+          "dep3-r1":
+            "Dars jadvallarini tuzish va o'quv rejalarini nazorat qilish",
+          "dep3-r2": "Pedagoglarning malakasini oshirish va attestatsiya",
+          "dep3-r3": "Ta'lim sifatini monitoring qilish va tahlil etish",
+          "dep3-r4": "Yangi o'quv dasturlari va metodikalarni tatbiq etish",
+          "dep3-r5": "Imtihon va baholash jarayonlarini tashkil etish",
+
+          "dep4-position":
+            "Xalqaro ta'lim dasturlarini muvofiqlashtirish bo'limi boshlig'i",
+          "dep4-r1": "Xorijiy ta'lim muassasalari bilan hamkorlik o'rnatish",
+          "dep4-r2": "Xalqaro grant va dasturlarni koordinatsiya qilish",
+          "dep4-r3":
+            "Chet el mutaxassislarini jalb etish va treninglar tashkil etish",
+          "dep4-r4": "Akademik almashinuv dasturlarini yo'lga qo'yish",
+          "dep4-r5": "Xalqaro akkreditatsiya va sertifikatlarni ta'minlash",
+
+          "footer-desc":
+            "Chilonzor tuman 1-son Texnikumi — sifatli ta'lim va bilim manbai.",
+          "footer-quick": "Tezkor havolalar",
+          "footer-teachers": "O'qituvchilar",
+          "footer-qualified": "Malakali o'qituvchilar",
+          "footer-address":
+            "Manzil: Toshkent shahar, Chilonzor tumani, 20-D mavze, Katta Qa'ni ko'chasi 52 uy",
+          "footer-copy":
+            "Chilonzor tuman 1-son Texnikumi. Barcha huquqlar himoyalangan.",
+        },
+
+        ru: {
+          title: "Руководство — Техникум №1 Чиланзарского района",
+          "brand-text": "Чиланзарский район\nТехникум №1",
+          "nav-home": "Главная",
+          "nav-departments": "Профессии",
+          "nav-about": "О нас",
+          "nav-management": "Руководство",
+          "nav-contact": "Контакты",
+          "nav-location": "Местоположение",
+
+          "section-title": "Руководство",
+          "ribbon-director": "Директор",
+          "director-position": "Директор Техникума №1 Чиланзарского района",
+          responsibilities: "Основные обязанности",
+
+          "dir-resp-1":
+            "Управление общей деятельностью техникума и стратегическое планирование",
+          "dir-resp-2":
+            "Контроль качества образования и внедрение инновационных методов",
+          "dir-resp-3":
+            "Управление педагогическим и административным персоналом, кадровая политика",
+          "dir-resp-4":
+            "Взаимодействие с государственными органами, партнёрскими организациями и родителями",
+          "dir-resp-5": "Формирование бюджета учреждения и финансовый контроль",
+          "dir-resp-6":
+            "Укрепление репутации техникума и развитие международных связей",
+
+          "deputies-title": "Заместители директора",
+
+          "dep1-position": "Заместитель директора по работе с молодёжью",
+          "dep1-r1": "Координация деятельности молодёжных организаций",
+          "dep1-r2":
+            "Организация спортивных, культурных и творческих мероприятий",
+          "dep1-r3": "Обеспечение дисциплины учащихся и воспитательная работа",
+          "dep1-r4": "Управление кружками и молодёжными проектами",
+          "dep1-r5": "Пропаганда правовых знаний среди молодёжи",
+
+          "dep2-position":
+            "Заместитель директора по производственному обучению",
+          "dep2-r1": "Контроль практических занятий и работы в мастерских",
+          "dep2-r2": "Налаживание сотрудничества с предприятиями и заводами",
+          "dep2-r3": "Организация производственной практики учащихся",
+          "dep2-r4": "Внедрение современного оборудования и технологий",
+          "dep2-r5": "Оценка профессиональных навыков и сертификация",
+
+          "dep3-position": "Заместитель директора по учебной работе",
+          "dep3-r1": "Составление расписания уроков и контроль учебных планов",
+          "dep3-r2": "Повышение квалификации педагогов и аттестация",
+          "dep3-r3": "Мониторинг и анализ качества образования",
+          "dep3-r4": "Внедрение новых учебных программ и методик",
+          "dep3-r5": "Организация экзаменов и процессов оценивания",
+
+          "dep4-position":
+            "Руководитель отдела координации международных образовательных программ",
+          "dep4-r1":
+            "Установление партнёрства с зарубежными учебными заведениями",
+          "dep4-r2": "Координация международных грантов и программ",
+          "dep4-r3":
+            "Привлечение иностранных специалистов и организация тренингов",
+          "dep4-r4": "Налаживание программ академического обмена",
+          "dep4-r5": "Обеспечение международной аккредитации и сертификатов",
+
+          "footer-desc":
+            "Техникум №1 Чиланзарского района — источник качественного образования и знаний.",
+          "footer-quick": "Быстрые ссылки",
+          "footer-teachers": "Преподаватели",
+          "footer-qualified": "Квалифицированные преподаватели",
+          "footer-address":
+            "Адрес: г. Ташкент, Чиланзарский район, 20-D массив, ул. Катта Қаъни, дом 52",
+          "footer-copy":
+            "Техникум №1 Чиланзарского района. Все права защищены.",
+        },
+
+        en: {
+          title: "Management — Chilonzor Technical College No. 1",
+          "brand-text": "Chilonzor District\nTechnical College No. 1",
+          "nav-home": "Home",
+          "nav-departments": "Professions",
+          "nav-about": "About Us",
+          "nav-management": "Management",
+          "nav-contact": "Contact",
+          "nav-location": "Location",
+
+          "section-title": "Management",
+          "ribbon-director": "Director",
+          "director-position":
+            "Director of Chilonzor District Technical College No. 1",
+          responsibilities: "Key Responsibilities",
+
+          "dir-resp-1":
+            "Managing the college's overall operations and strategic planning",
+          "dir-resp-2":
+            "Monitoring education quality and introducing innovative methods",
+          "dir-resp-3":
+            "Managing teaching and administrative staff, personnel policy",
+          "dir-resp-4":
+            "Cooperation with government bodies, partner organisations and parents",
+          "dir-resp-5":
+            "Forming the institution's budget and financial oversight",
+          "dir-resp-6":
+            "Strengthening the college's reputation and developing international relations",
+
+          "deputies-title": "Deputy Directors",
+
+          "dep1-position": "Deputy Director for Youth Affairs",
+          "dep1-r1": "Coordinating the activities of youth organisations",
+          "dep1-r2": "Organising sports, cultural and creative events",
+          "dep1-r3": "Ensuring student discipline and educational work",
+          "dep1-r4": "Managing clubs and youth projects",
+          "dep1-r5": "Promoting legal knowledge among young people",
+
+          "dep2-position": "Deputy Director for Industrial Training",
+          "dep2-r1": "Supervising practical classes and workshop activities",
+          "dep2-r2": "Establishing cooperation with enterprises and factories",
+          "dep2-r3": "Organising students' industrial internships",
+          "dep2-r4": "Introducing modern equipment and technologies",
+          "dep2-r5": "Assessing professional skills and certification",
+
+          "dep3-position": "Deputy Director for Academic Affairs",
+          "dep3-r1": "Drawing up timetables and monitoring curricula",
+          "dep3-r2": "Improving teachers' qualifications and attestation",
+          "dep3-r3": "Monitoring and analysing education quality",
+          "dep3-r4": "Implementing new curricula and teaching methods",
+          "dep3-r5": "Organising examinations and assessment processes",
+
+          "dep4-position":
+            "Head of the International Education Programmes Coordination Department",
+          "dep4-r1":
+            "Establishing partnerships with foreign educational institutions",
+          "dep4-r2": "Coordinating international grants and programmes",
+          "dep4-r3":
+            "Attracting foreign specialists and organising training sessions",
+          "dep4-r4": "Setting up academic exchange programmes",
+          "dep4-r5": "Ensuring international accreditation and certificates",
+
+          "footer-desc":
+            "Chilonzor District Technical College No. 1 — a source of quality education and knowledge.",
+          "footer-quick": "Quick Links",
+          "footer-teachers": "Teachers",
+          "footer-qualified": "Qualified Teachers",
+          "footer-address":
+            "Address: Tashkent city, Chilonzor district, 20-D massiv, Katta Qa'ni street, house 52",
+          "footer-copy":
+            "Chilonzor District Technical College No. 1. All rights reserved.",
+        },
+      };
+
+      /* ============================================================
+     CHANGE LANGUAGE
+  ============================================================ */
+      function changeLanguage() {
+        const lang = document.getElementById("language").value;
+        const t = translations[lang];
+
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          const key = el.getAttribute("data-lang");
+          if (t[key] !== undefined) {
+            if (key === "brand-text") {
+              el.innerHTML = t[key].replace(/\n/g, "<br>");
+            } else {
+              el.textContent = t[key];
+            }
+          }
+        });
+
+        document.title = t["title"] || document.title;
+        document.documentElement.lang = lang;
+      }
+    </script>
+  </body>
+</html>
